@@ -7,5 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
-  opened: boolean = true;
+  isExpanded = false;
+  showSubmenu: boolean = false;
+  isShowing = false;
+
+  mouseenter() {
+    if (!this.isExpanded) {
+      this.isShowing = true;
+    }
+  }
+
+  mouseleave() {
+    if (!this.isExpanded) {
+      this.isShowing = false;
+    }
+  }
 }

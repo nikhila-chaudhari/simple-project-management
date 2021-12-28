@@ -1,39 +1,46 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" 
-    (click)="sidenav.toggle()"
-    aria-label="Side Menu">
+<mat-toolbar color="primary" >
+	<button mat-icon-button (click)="isExpanded = !isExpanded">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>Projects portal</span>
+	<h1>Projects Portal</h1>
   <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Account">
+  <button mat-icon-button class="favorite-icon" aria-label="Account">
     <mat-icon>face</mat-icon>
     <mat-icon>arrow_drop_down</mat-icon>
   </button>
-  
 </mat-toolbar>
-
-<mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened" >
-    <button mat-button class="menu-button">
-      <mat-icon color="primary">dashboard</mat-icon>
-      <span>&nbsp; Dashboard</span>
-    </button>
-    <button mat-button class="menu-button">
-        <mat-icon color="primary">event</mat-icon>
-        <span>&nbsp; Projects</span>
-    </button>
-    <button mat-button class="menu-button">
-        <mat-icon color="primary">person_outline</mat-icon>
-        <span>&nbsp; Members</span>
-    </button>
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-    <div class="content">
-      <span>Main content goes here...</span>
-
-    </div>
+<mat-sidenav-container class="pp-sidenav-container" autosize>
+	<mat-sidenav #sidenav class="pp-sidenav" mode="side" opened="true" 
+      (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+		<mat-nav-list>
+			<mat-list-item (click)="showSubmenu = !showSubmenu">
+				<span class="full-width" *ngIf="isExpanded || isShowing">Dashboard</span>
+				<mat-icon mat-list-icon>home</mat-icon>
+				<!--<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" 
+          *ngIf="isExpanded || isShowing">expand_more</mat-icon>-->
+			</mat-list-item>
+			<!--<div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+				<a mat-list-item href="...">Submenu Item 1</a>
+				<a mat-list-item href="...">Submenu Item 2</a>
+      
+			</div>
+      -->
+      <mat-list-item>
+				<span class="full-width" *ngIf="isExpanded || isShowing">Projects</span>
+				<mat-icon mat-list-icon>event</mat-icon>
+				
+			</mat-list-item>
+      <mat-list-item>
+				<span class="full-width" *ngIf="isExpanded || isShowing">Members</span>
+				<mat-icon mat-list-icon>person</mat-icon>
+				
+			</mat-list-item>
+		</mat-nav-list>
     
-  </mat-sidenav-content>
+	</mat-sidenav>
+
+	<div class="pp-sidenav-content">
+		Main content that resizes properly
+	</div>
+
 </mat-sidenav-container>

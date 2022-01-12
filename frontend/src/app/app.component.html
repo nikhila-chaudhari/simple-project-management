@@ -1,43 +1,6 @@
-<mat-toolbar color="primary" >
-	<button mat-icon-button (click)="isExpanded = !isExpanded">
-    <mat-icon>menu</mat-icon>
-  </button>
-	<h1>Projects Portal</h1>
-  <span class="example-spacer"></span>
-  <button mat-icon-button class="favorite-icon" aria-label="Account">
-    <mat-icon>face</mat-icon>
-    <mat-icon>arrow_drop_down</mat-icon>
-  </button>
-</mat-toolbar>
+<app-top-nav></app-top-nav>
 <mat-sidenav-container class="pp-sidenav-container" autosize>
-	<mat-sidenav #sidenav class="pp-sidenav" mode="side" opened="true" 
-      (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
-		<mat-nav-list>
-			<mat-list-item (click)="showSubmenu = !showSubmenu">
-				<span class="full-width" *ngIf="isExpanded || isShowing">Dashboard</span>
-				<mat-icon mat-list-icon>home</mat-icon>
-				<!--<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" 
-          *ngIf="isExpanded || isShowing">expand_more</mat-icon>-->
-			</mat-list-item>
-			<!--<div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
-				<a mat-list-item href="...">Submenu Item 1</a>
-				<a mat-list-item href="...">Submenu Item 2</a>
-      
-			</div>
-      -->
-      <mat-list-item>
-				<span class="full-width" *ngIf="isExpanded || isShowing">Projects</span>
-				<mat-icon mat-list-icon>event</mat-icon>
-				
-			</mat-list-item>
-      <mat-list-item>
-				<span class="full-width" *ngIf="isExpanded || isShowing">Members</span>
-				<mat-icon mat-list-icon>person</mat-icon>
-				
-			</mat-list-item>
-		</mat-nav-list>
-    
-	</mat-sidenav>
+	<app-side-nav></app-side-nav>
 
 	<div class="pp-sidenav-content">
 		Main content that resizes properly

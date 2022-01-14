@@ -1,7 +1,7 @@
 <mat-sidenav #sidenav class="pp-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()"
     (mouseleave)="mouseleave()">
     <mat-nav-list>
-        <mat-list-item>
+        <mat-list-item routerLink="/dashboard" routerLinkActive="menu-active">
             <span class="full-width" *ngIf="isExpanded || isShowing">Dashboard</span>
             <mat-icon mat-list-icon>home</mat-icon>
             <!--<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" 
@@ -13,12 +13,12 @@
       
 			</div>
       -->
-        <mat-list-item>
+        <mat-list-item routerLink="/projects" routerLinkActive="menu-active">
             <span class="full-width" *ngIf="isExpanded || isShowing">Projects</span>
             <mat-icon mat-list-icon>event</mat-icon>
 
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item routerLink="/members" routerLinkActive="menu-active">
             <span class="full-width" *ngIf="isExpanded || isShowing">Members</span>
             <mat-icon mat-list-icon>person</mat-icon>
 

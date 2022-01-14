@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NavigationService } from '../services/navigation.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-side-nav',

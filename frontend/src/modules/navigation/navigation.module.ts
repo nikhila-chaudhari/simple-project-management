@@ -4,6 +4,7 @@ import { TopNavComponent } from './top-nav/top-nav.component';
 import { MaterialModule } from 'src/material.module';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { NavigationService } from './services/navigation.service';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,7 +15,8 @@ import { NavigationService } from './services/navigation.service';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
   exports:[
     TopNavComponent,

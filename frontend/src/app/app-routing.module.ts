@@ -1,14 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from 'src/modules/dashboard/dashboard/dashboard.component';
-import { MembersListComponent } from 'src/modules/members/members-list/members-list.component';
-import { ProjectsListComponent } from 'src/modules/projects/projects-list/projects-list.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'projects', component: ProjectsListComponent },
-  { path: 'members', component: MembersListComponent }
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/dashboard',
+  },
+  { 
+    path: 'dashboard',
+    loadChildren: () => import('src/modules/dashboard/dashboard-routing.module')
+      .then( m => m.DashboardRoutingModule)
+  },
+  { 
+    path: 'projects',
+    loadChildren: () => import('src/modules/projects/projects-routing.module')
+      .then( m => m.ProjectsRoutingModule)
+  },
+  { 
+    path: 'members',
+    loadChildren: () => import('src/modules/members/members-routing.module')
+      .then( m => m.MembersRoutingModule)
+  }
+  
 ];
 
 @NgModule({

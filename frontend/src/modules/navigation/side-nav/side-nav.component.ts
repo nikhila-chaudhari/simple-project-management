@@ -3,6 +3,18 @@ import { Subscription } from 'rxjs';
 import { NavigationService } from '../services/navigation.service';
 import { RouterModule } from '@angular/router';
 
+declare interface RouteInfo {
+  path: string;
+  title: string;
+  icon: string;
+  class: string;
+}
+export const ROUTES: RouteInfo[] = [
+  { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
+  { path: '/members', title: 'Members',  icon:'person', class: '' },
+  { path: '/projects', title: 'Projects',  icon:'content_paste', class: '' }
+];
+
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
@@ -13,6 +25,8 @@ export class SideNavComponent implements OnInit, OnDestroy {
   isExpanded: boolean = false;
   isShowing: boolean = false;
   subscription: Subscription = new Subscription();
+  projectTitle = "Projects Portal";
+  menuItems: RouteInfo[] = [];
 
   constructor( public navService: NavigationService) { }
   
@@ -20,6 +34,7 @@ export class SideNavComponent implements OnInit, OnDestroy {
     this.subscription = this.navService.sideNavExpanded().subscribe( expanded => {
       this.isExpanded = expanded;
     });
+    this.menuItems = ROUTES;
   } 
 
   mouseenter() {

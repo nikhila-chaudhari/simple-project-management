@@ -1,0 +1,55 @@
+@mixin bmd-hover-focus-active {
+  // add the .active to the whole mix of hover-focus-active
+  &.active {
+    @content;
+  }
+  @include hover-focus-active() {
+    @content;
+  }
+}
+
+@mixin transform-translate-y($value){
+     -webkit-transform:  translate3d(0,$value, 0);
+        -moz-transform: translate3d(0, $value, 0);
+        -o-transform: translate3d(0, $value, 0);
+        -ms-transform: translate3d(0, $value, 0);
+        transform: translate3d(0, $value, 0);
+}
+
+// Hover mixin and `$enable-hover-media-query` are deprecated.
+//
+// Originally added during our alphas and maintained during betas, this mixin was
+// designed to prevent `:hover` stickiness on iOS-an issue where hover styles
+// would persist after initial touch.
+//
+// For backward compatibility, we've kept these mixins and updated them to
+// always return their regular pseudo-classes instead of a shimmed media query.
+//
+// Issue: https://github.com/twbs/bootstrap/issues/25195
+
+@mixin hover() {
+  &:hover { @content; }
+}
+
+@mixin hover-focus() {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin plain-hover-focus() {
+  &,
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin hover-focus-active() {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}

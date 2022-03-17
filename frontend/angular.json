@@ -32,7 +32,9 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles/styles.scss"
+              "src/styles/styles.scss",
+              "src/assets/scss/material-dashboard.scss",
+              "src/assets/css/demo.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": ["src"]
@@ -107,7 +109,7 @@
               "src/styles/styles.scss"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["src"]
+              "includePaths": ["src", "./node_modules"]
             },
             "scripts": []
           }

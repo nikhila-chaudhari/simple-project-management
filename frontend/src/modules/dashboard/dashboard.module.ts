@@ -17,13 +17,11 @@ import { LayoutModule } from '@angular/cdk/layout';
   ],
   imports: [
     CommonModule,
-    RouterModule,
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
     MatIconModule,
-    MatButtonModule,
-    LayoutModule
+    MatButtonModule
   ],
   exports: [
     DashboardComponent

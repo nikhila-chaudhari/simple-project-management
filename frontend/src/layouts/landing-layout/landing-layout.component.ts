@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 })
 export class LandingLayoutComponent implements OnInit {
 
+  isCollapsed: boolean = false;
   constructor() { 
     console.log('Initializing landing layout component');
   }

@@ -13,6 +13,11 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('src/modules/auth/auth-routing.module')
       .then( m => m.AuthRoutingModule)
+  },
+  { 
+    path: 'aboutus',
+    loadChildren: () => import('src/modules/aboutUs/aboutus-routing.module')
+      .then( m => m.AboutUsRoutingModule)
   }
 ];
 

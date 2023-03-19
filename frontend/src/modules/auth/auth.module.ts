@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { MaterialModule } from 'src/material.module';
-import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,7 +18,9 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    MatIconModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     LoginComponent

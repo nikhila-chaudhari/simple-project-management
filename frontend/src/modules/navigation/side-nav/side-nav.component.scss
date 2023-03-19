@@ -1,4 +1,6 @@
 @import "styles/styles.scss";
+
+
 .pp-sidenav {
     user-select: none;
 }
@@ -23,9 +25,6 @@
     transform: scaleY(1);
 }
 
-.menu-active {
-    color: $primary;
-}
 
 .project-title {
     padding-left: 40px;

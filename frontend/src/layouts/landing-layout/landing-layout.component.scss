@@ -24,7 +24,7 @@
  */
 
 .landing-container {
-  color: $forest-color;
+  color: $primary;
 }
 
 
@@ -41,7 +41,7 @@
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-  border-bottom-color: $forest-color;
+  border-bottom-color: $primary;
 }
 
 .nav-masthead .nav-link + .nav-link {
@@ -49,6 +49,6 @@
 }
 
 .nav-masthead .nav-link .active {
-  color: $forest-color;
-  border-bottom-color: $forest-color;
+  color: $primary;
+  border-bottom-color: $primary;
 }

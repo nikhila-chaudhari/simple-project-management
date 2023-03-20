@@ -4,8 +4,13 @@ import { AuthModule } from 'src/modules/auth/auth.module';
 import { LandingComponent } from '../../modules/landing/landing.component';
 
 const routes: Routes = [
-  { 
+  {
     path: '',
+    pathMatch: 'full',
+    redirectTo: 'home',
+  },
+  { 
+    path: 'home',
     loadChildren: () => import('src/modules/landing/landing.module')
       .then( m => m.LandingModule)
   },

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-forgot-password',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotPasswordComponent implements OnInit {
 
-  constructor() { }
+  
+  myForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]]
+  });
+
+  constructor(private fb: FormBuilder, 
+    private _snackBar: MatSnackBar) { 
+  }
 
   ngOnInit(): void {
+  }
+  get email() { return this.myForm.get('email') as FormControl; }
+
+  getErrorMessage( formField: FormControl) {
+    if (formField.hasError('required')) {
+      return 'This field is required';
+    }
+    return formField.hasError('email') ? 'Not a valid email' : '';
+  }
+
+  resetPassword(): void {
+    if( this.myForm.invalid){
+      return;
+    }
+    this._snackBar.open('Password was reset. Please check your email for further instructions.', '', {
+      duration: 5000
+    });
   }
 
 }

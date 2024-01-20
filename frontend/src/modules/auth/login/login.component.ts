@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -16,17 +16,17 @@ export class LoginComponent implements OnInit {
 
   hide = true;
   
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: UntypedFormBuilder) { 
     console.log('Initializing Login component');
   }
 
   ngOnInit(): void {
   }
 
-  get email() { return this.loginForm.get('email') as FormControl; }
-  get password() { return this.loginForm.get('password') as FormControl; }
+  get email() { return this.loginForm.get('email') as UntypedFormControl; }
+  get password() { return this.loginForm.get('password') as UntypedFormControl; }
 
-  getErrorMessage( formField: FormControl) {
+  getErrorMessage( formField: UntypedFormControl) {
     if (formField.hasError('required')) {
       return 'This field is required';
     }

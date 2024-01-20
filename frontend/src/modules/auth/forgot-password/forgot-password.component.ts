@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -14,15 +14,15 @@ export class ForgotPasswordComponent implements OnInit {
     email: ['', [Validators.required, Validators.email]]
   });
 
-  constructor(private fb: FormBuilder, 
+  constructor(private fb: UntypedFormBuilder, 
     private _snackBar: MatSnackBar) { 
   }
 
   ngOnInit(): void {
   }
-  get email() { return this.myForm.get('email') as FormControl; }
+  get email() { return this.myForm.get('email') as UntypedFormControl; }
 
-  getErrorMessage( formField: FormControl) {
+  getErrorMessage( formField: UntypedFormControl) {
     if (formField.hasError('required')) {
       return 'This field is required';
     }

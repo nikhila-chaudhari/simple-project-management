@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -17,19 +17,19 @@ export class SignupComponent implements OnInit {
   });
   hide = true;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: UntypedFormBuilder) { }
 
   ngOnInit(): void {
   }
 
-  get firstName(){ return this.myForm.get('firstName') as FormControl}
-  get lastName(){ return this.myForm.get('lastName') as FormControl}
-  get email(){ return this.myForm.get('email') as FormControl}
-  get password(){ return this.myForm.get('password') as FormControl}
-  get confirmPassword(){ return this.myForm.get('confirmPassword') as FormControl}
+  get firstName(){ return this.myForm.get('firstName') as UntypedFormControl}
+  get lastName(){ return this.myForm.get('lastName') as UntypedFormControl}
+  get email(){ return this.myForm.get('email') as UntypedFormControl}
+  get password(){ return this.myForm.get('password') as UntypedFormControl}
+  get confirmPassword(){ return this.myForm.get('confirmPassword') as UntypedFormControl}
 
 
-  getErrorMessage( formField: FormControl) {
+  getErrorMessage( formField: UntypedFormControl) {
     if (formField.hasError('required')) {
       return 'This field is required';
     }

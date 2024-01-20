@@ -3,31 +3,29 @@
         <main class="form-signin">
             <form [formGroup]="myForm" (ngSubmit)="register()">
                 <img class="mb-4" src="/assets/img/tree-logo.png" alt="" width="72" height="57">
-                <h1 class="mb-3 fw-normal">Create an account</h1>
-
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
-                        <mat-form-field appearance="fill">
+                        <mat-form-field appearance="fill" class="w-100">
                             <mat-label>First Name</mat-label>
                             <input matInput formControlName="firstName">
                             <mat-error *ngIf="firstName.invalid">{{getErrorMessage( firstName)}}</mat-error>
                         </mat-form-field>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                        <mat-form-field appearance="fill">
+                        <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Last Name</mat-label>
                             <input matInput formControlName="lastName">
                             <mat-error *ngIf="lastName.invalid">{{getErrorMessage( lastName)}}</mat-error>
                         </mat-form-field>
                     </div>
                 </div>
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="fill" class="w-100">
                     <mat-label>Email address</mat-label>
                     <input matInput placeholder="name@example.com" formControlName="email">
                     <mat-error *ngIf="email.invalid">{{getErrorMessage( email)}}</mat-error>
                 </mat-form-field>
 
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="fill" class="w-100">
                     <mat-label>Password</mat-label>
                     <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
@@ -36,7 +34,7 @@
                     <mat-error *ngIf="password.invalid">{{getErrorMessage( password)}}</mat-error>
                 </mat-form-field>
 
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="fill" class="w-100">
                     <mat-label>Confirm Password</mat-label>
                     <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirmPassword">
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">

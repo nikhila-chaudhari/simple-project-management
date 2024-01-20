@@ -5,13 +5,13 @@
                 <img class="mb-4" src="/assets/img/tree-logo.png" alt="" width="72" height="57">
                 <!--<h1 class="h3 mb-3 fw-normal">Please sign in <mat-icon>menu</mat-icon></h1> -->
 
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="fill" class="w-100">
                     <mat-label>Email address</mat-label>
                     <input matInput placeholder="name@example.com" formControlName="email">
                     <mat-error *ngIf="email.invalid">{{getErrorMessage( email)}}</mat-error>
                 </mat-form-field>
 
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="fill" class="w-100">
                     <mat-label>Password</mat-label>
                     <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">

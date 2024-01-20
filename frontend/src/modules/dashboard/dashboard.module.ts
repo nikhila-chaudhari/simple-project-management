@@ -2,12 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
-import { MatLegacyMenuModule as MatMenuModule } from '@angular/material/legacy-menu';
-import { MatIconModule } from '@angular/material/icon';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
-import { LayoutModule } from '@angular/cdk/layout';
+import { MaterialModule } from 'src/material.module';
 
 
 
@@ -17,11 +12,7 @@ import { LayoutModule } from '@angular/cdk/layout';
   ],
   imports: [
     CommonModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule
+    MaterialModule
   ],
   exports: [
     DashboardComponent

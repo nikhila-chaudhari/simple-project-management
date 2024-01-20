@@ -30,9 +30,6 @@ export class SignupComponent implements OnInit {
 
 
   getErrorMessage( formField: UntypedFormControl) {
-    if (formField.hasError('required')) {
-      return 'This field is required';
-    }
     return formField.hasError('email') ? 'Not a valid email' : '';
   }
 
